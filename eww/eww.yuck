@@ -1,0 +1,110 @@
+(defpoll time :interval "1s"
+  `date '+%H:%M:%S'`)
+
+(defpoll date_full :interval "1s"
+  `date '+%A, %d de %B'`)
+
+(defpoll weather :interval "600s"
+  "curl -s 'wttr.in/Santo_Domingo?format=%t+%C'")
+
+(defwindow reloj
+  :monitor 0
+  :geometry (geometry
+    :x "40px"
+    :y "560px"
+    :width "300px"
+    :height "110px")
+  :anchor "top left"
+  :stacking "bg"
+  :focusable false
+  (box :class "clock-window"
+    :orientation "vertical"
+    :space-evenly false
+    (label :class "clock-time" :text time)
+    (label :class "clock-date" :text date_full)
+    (label :class "clock-date" :text weather)))
+
+(defpoll cpu :interval "3s"
+  `grep 'cpu ' /proc/stat | awk '{u=$2+$4; t=$2+$4+$5; if (t>0) printf " CPU: %.0f%%", (u/t)*100; else print "CPU: 0%"}'`)
+
+(defpoll ram :interval "3s"
+  `awk '/MemTotal/ {t=$2} /MemAvailable/ {a=$2} END {printf " RAM: %.0fMB / %.0fMB", (t-a)/1024, t/1024}' /proc/meminfo`)
+
+(defpoll temp :interval "5s"
+  `sensors | awk '/temp1:/ {print "TEMP: " $2; exit}'`)
+
+(defpoll hosts :interval "5s"
+  `cat /etc/hostname`)
+
+(defpoll net :interval "5s"
+  `ping -c1 -W1 8.8.8.8 >/dev/null 2>&1 && ip route get 1 | awk '{print "󰖩 NET: " $7; exit}' || echo "󰖩 NET: inactivo"`)
+  
+(defpoll torstatus :interval "5s"
+  `systemctl is-active tor | awk '{if($1=="active") print "󰞀 TOR: 󰌆 ON"; else print "󰞀 TOR: OFF"}'`)
+
+(defpoll tor_ip
+  :interval "5s"
+  `sh ~/.config/eww/scripts/tor_ip.sh`)
+
+(defwindow stats
+  :monitor 0
+  :geometry (geometry
+    :x "1110px"
+    :y "40px"
+    :width "250px"
+    :height "200px")
+  :anchor "top left"
+  :stacking "bg"
+  :focusable false
+  (box :class "stats-window"
+    :orientation "Vertical"
+    (label :class "stats-title" :text hosts)
+    (label :class "stats-line" :text cpu)
+    (label :class "stats-line" :text ram)
+    (label :class "stats-line" :text temp)))
+
+(defwindow network
+  :monitor 0
+  :geometry (geometry
+    :x "1085px"
+    :y "550px"
+    :width "274px"
+    :height "150px")
+  :anchor "top left"
+  :stacking "bg"
+  :focusable false
+  (box :class "network-window"
+    :orientation "Vertical"
+    (label :class "network-title" :text "Networking")
+    (label :class "network-line" :text net)
+    (label :class "network-line" :text torstatus)
+    (label :class "network-line" :text tor_ip)))
+
+(defpoll byte_logo :interval "10s"
+  "~/.config/eww/scripts/byte_logo.sh")
+
+(defwidget byte_widget []
+  (box
+    :class "byte-box"
+    :orientation "vertical"
+    :halign "center"
+    :valign "center"
+    (label
+      :class "byte-logo"
+      :xalign 0.5
+      :yalign 0.5
+      :wrap false
+      :text byte_logo)))
+
+(defwindow byte_window
+  :monitor 0
+  :geometry (geometry
+    :x "370px"
+    :y "0px"
+    :width "600px"
+    :height "200px"
+    :anchor "top left")
+  :stacking "bg"
+  :focusable false
+  :wm-ignore true
+  (byte_widget))

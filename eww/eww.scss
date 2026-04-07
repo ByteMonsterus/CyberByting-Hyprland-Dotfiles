@@ -1,0 +1,133 @@
+* {
+  all: unset;
+  font-family: "Hack", "Iosevka Nerd Font", monospace;
+}
+
+.clock-window {
+  background: rgba(12, 12, 18, 0.30);
+  padding: 18px 22px;
+  border-radius: 18px;
+  transition: all 180ms ease;
+}
+
+.clock-time {
+  font-size: 52px;
+  font-weight: 800;
+  color: #d7b3ff;
+  text-shadow: 0 0 8px rgba(187, 102, 255, 0.35);
+}
+
+.clock-date {
+  margin-top: 0px;
+  font-size: 15px;
+  opacity: 0.85;
+  font-weight: 600;
+  color: #b8a8cc;
+}
+
+
+.stats-window {
+  background: rgba(12, 12, 18, 0.30);
+  border-radius: 18px;
+  padding: 18px 22px;
+}
+
+.stats-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #d7b3ff;
+  text-shadow: 0 0 8px rgba(187, 102, 255, 0.35);
+}
+
+.stats-line {
+  font-size: 15px;
+  color: #f0e6ff;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.network-window {
+  background: rgba(12, 12, 18, 0.30);
+  border-radius: 18px;
+  padding: 18px 22px;
+}
+
+.network-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #d7b3ff;
+  text-shadow: 0 0 8px rgba(187, 102, 255, 0.35);
+}
+
+.network-line {
+  font-size: 16px;
+  color: #f0e6ff;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.stats-window,
+.net-window,
+.clock-window {
+  transition: all 180ms ease;
+}
+
+.stats-window:hover,
+.network-window:hover,
+.clock-window:hover {
+  margin-top: -2px;
+  box-shadow: 0 0 20px rgba(180, 100, 255, 0.22);
+  border-color: rgba(210, 150, 255, 0.55);
+  background: rgba(18, 12, 28, 0.65);
+}
+
+.clima {
+  background: rgba(15, 15, 25, 0.45);
+  border: 1px solid rgba(180, 120, 255, 0.25);
+  border-radius: 14px;
+  padding: 12px;
+  color: #d8b4ff;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+}
+
+.byte-box {
+  background-color: rgba(15, 15, 25, 0.0);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.byte-logo {
+  font-family: "Hack", monospace;
+  font-size: 8px;
+  font-weight: bold;
+  color: #9d7dff;
+  opacity: 0.55;
+  text-shadow:
+    0 0 4px rgba(157, 125, 255, 0.7),
+    0 0 8px rgba(157, 125, 255, 0.45);
+  animation: byteGlow 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes byteGlow {
+  0% {
+    color: #7aa2ff;
+    text-shadow:
+      0 0 3px rgba(122, 162, 255, 0.5),
+      0 0 6px rgba(122, 162, 255, 0.25);
+  }
+
+  50% {
+    color: #b08cff;
+    text-shadow:
+      0 0 6px rgba(176, 140, 255, 0.8),
+      0 0 12px rgba(176, 140, 255, 0.45);
+  }
+
+  100% {
+    color: #ffd166;
+    text-shadow:
+      0 0 5px rgba(255, 209, 102, 0.8),
+      0 0 10px rgba(255, 209, 102, 0.35);
+  }
+}

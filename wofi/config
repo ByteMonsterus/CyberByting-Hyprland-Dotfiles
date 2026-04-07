@@ -1,0 +1,8 @@
+width=700
+height=400
+location=center
+prompt=Sistema...
+allow_images=true
+term=kitty
+hide_scroll=true
+no_actions=true

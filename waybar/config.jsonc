@@ -1,0 +1,92 @@
+[
+  {
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "spacing": 6,
+
+  "modules-left": ["custom/arch"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "battery"],
+
+  "custom/arch":{
+    "format" : "󰣇   ",
+    "tooltip" : false,
+    "on-click" : "wofi -S drun"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "sort-by-number": true,
+    "all-outputs": false,
+    "format-icons": {
+        "active": "󰮯",
+        "default": "󰊠",
+        "empty": "◉"
+    },
+    "persistent-workspaces": {
+        "*": 9
+    },
+    "on-click": "activate"
+  },
+
+  "clock": {
+    "format": "  {:%H:%M} ",
+    "tooltip-format": "{:%A, %d %B %Y\n%H:%M}"
+  },
+
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "󰈀  Ethernet",
+    "format-linked": "󰈀  {ifname}",
+    "format-disconnected": "󰖪  Offline",
+    "tooltip-format": "Interfaz: {ifname}\nIP local: {ipaddr}\nSeñal: {signalStrength}%",
+    "on-click": "kitty -e nmtui &"
+  },
+
+  "custom/ip": {
+    "format": "󰩠  {}",
+    "exec": "ip -4 addr show | awk '/inet / && $2 !~ /^127/ {print $2}' | cut -d/ -f1 | head -n 1",
+    "interval": 10,
+    "tooltip": true
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": "",
+    "tooltip-format": "Bluetooth: {status}",
+    "on-click": "blueman-manager && pkill blueman-applet"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}   {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol &"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "Batería: {capacity}%"
+  },
+
+  "custom/tor": {
+    "format": "󰈀   {}",
+    "exec": "systemctl is-active tor 2>/dev/null || systemctl is-active tor.service 2>/dev/null || echo inactive",
+    "interval": 5,
+    "return-type": "plain",
+    "tooltip": true,
+    "on-click": "kitty -e sh -c 'systemctl status tor || systemctl status tor.service; read' &"
+    }
+  }
+]
