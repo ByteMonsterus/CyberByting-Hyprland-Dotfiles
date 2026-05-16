@@ -5,13 +5,13 @@
 <table>
   <tr>
     <td>
-      <img src="./assest/preview.png" width="400"/>
+      <img src="./assest/preview.jpeg" width="400"/>
     </td>
     <td>
-      <img src="./assest/preview2.png" width="400"/>
+      <img src="./assest/preview2.jpeg" width="400"/>
     </td>
     <td>
-      <img src="./assest/preview3.png" width="400"/>
+      <img src="./assest/preview3.jpeg" width="400"/>
     </td>
   </tr>
 </table>
