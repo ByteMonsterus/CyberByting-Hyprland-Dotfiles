@@ -5,12 +5,22 @@
   "height": 40,
   "spacing": 6,
 
-  "modules-left": ["custom/arch"],
+  "modules-left": ["custom/arch", "custom/cava"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "battery"],
+  "modules-right": ["tray", "network", "bluetooth", "custom/notifications", "pulseaudio", "battery"],
+
+"custom/notifications": {
+  "format": "󰂚",
+  "on-click": "swaync-client -t"
+},
+
+"custom/cava": {
+        "format": "{}",
+        "exec": "~/.config/waybar/cava.sh"
+},
 
   "custom/arch":{
-    "format" : "󰣇   ",
+    "format" : "󰣇",
     "tooltip" : false,
     "on-click" : "wofi -S drun"
   },

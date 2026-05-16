@@ -1,0 +1,19 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "overlay",
+  "control-center-margin-top": 10,
+  "control-center-margin-right": 10,
+
+  "notification-window-width": 360,
+  "notification-icon-size": 40,
+
+  "timeout": 5,
+  "timeout-low": 3,
+  "timeout-critical": 0,
+
+  "fit-to-screen": false,
+  "hide-on-clear": false,
+  "hide-on-action": true
+}

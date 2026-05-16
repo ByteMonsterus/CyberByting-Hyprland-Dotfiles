@@ -4,6 +4,12 @@
     min-height: 0;
 }
 
+#custom-cava {
+  font-family: monospace;
+  font-size: 10px;
+  color: #a855f7;
+}
+
 window#waybar.top {
     background: rgba(10, 10, 18, 0.72);
     border: 2px solid #a855f7;
@@ -41,6 +47,7 @@ window#waybar.top {
 #bluetooth,
 #pulseaudio,
 #battery,
+#custom-notifications,
 #custom-tor {
     margin: 6px 4px;
     padding: 4px 12px;
@@ -48,6 +55,11 @@ window#waybar.top {
     background: rgba(168, 85, 247, 0.10);
     color: #d8b4fe;
     border: 1px solid rgba(168, 85, 247, 0.30);
+}
+
+#custom-notifications:hover{
+   background: rgba(168, 85, 247, 0.16);
+   color: #d8b4fe;
 }
 
 #clock {

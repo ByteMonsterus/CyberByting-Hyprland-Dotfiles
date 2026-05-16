@@ -1,0 +1,37 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+}
+
+.control-center {
+  background: rgba(10, 10, 15, 0.92);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 150, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 150, 0.15);
+}
+
+.notification {
+  background: rgba(15, 15, 25, 0.95);
+  border-radius: 10px;
+  border-left: 3px solid #00ff99;
+  margin: 6px;
+  padding: 10px;
+}
+
+.notification.critical {
+  border-left: 3px solid #ff0040;
+}
+
+.notification-title {
+  color: #00ff99;
+  font-weight: bold;
+}
+
+.notification-body {
+  color: #cfcfcf;
+}
+
+.close-button {
+  background: transparent;
+  color: #ff0040;
+}
