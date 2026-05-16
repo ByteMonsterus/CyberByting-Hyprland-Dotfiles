@@ -11,7 +11,7 @@
       <img src="./assest/preview2.png" width="400"/>
     </td>
     <td>
-      <img src="./assest/desktop.gif" width="300"/>
+      <img src="./assest/preview3.png" width="400"/>
     </td>
   </tr>
 </table>
