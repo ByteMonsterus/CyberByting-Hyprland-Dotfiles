@@ -1,0 +1,195 @@
+;; =========================================
+;; UNDERGROUND CYBERPUNK DASHBOARD
+;; =========================================
+
+;; ================= POLLS =================
+
+(defpoll time :interval "1s"
+  `date '+%H:%M'`)
+
+(defpoll date_full :interval "10s"
+  `date '+%A, %d %B'`)
+
+(defpoll cpu :interval "2s"
+  `top -bn1 | grep Cpu | awk '{print " CPU  "$2"%"}'`)
+
+(defpoll ram :interval "2s"
+  `free -h | awk '/Mem:/ {print " RAM  "$3" / "$2}'`)
+
+(defpoll uptime :interval "30s"
+  `uptime -p | sed 's/up /󰅐 /'`)
+
+(defpoll net :interval "5s"
+  `ping -c1 1.1.1.1 >/dev/null && echo '󰖩 CONNECTED' || echo '󰖪 OFFLINE'`)
+
+(defpoll ip :interval "10s"
+  `hostname -I | awk '{print "󰩠 "$1}'`)
+
+(defpoll weather :interval "600s"
+  `curl -s 'wttr.in/Santo_Domingo?format=🌙+%t+•+%C'`)
+
+(defpoll music :interval "2s"
+  `playerctl metadata --format ' {{artist}} - {{title}}' 2>/dev/null || echo 'No music playing'`)
+
+(defpoll torstatus :interval "2s"
+  `systemctl is-active tor | awk '{if($1=="active") print "󰞀 TOR: 󰌆 ON"; else print "󰞀 TOR: OFF"}'`)
+
+(defpoll tor_ip
+  :interval "2s"
+  `sh ~/.config/eww/scripts/tor_ip.sh`)
+
+;; ================= DASHBOARD =================
+
+(defwindow dashboard
+  :monitor 0
+  :stacking "bg"
+  :focusable false
+  :anchor "center"
+
+  :geometry (geometry
+    :width "620px"
+    :height "420px"
+    :x "385px"
+    :y "10px")
+
+  (box
+    :class "dashboard"
+    :orientation "vertical"
+
+    ;; CLOCK
+
+    (box
+      :class "clock-section"
+      :orientation "vertical"
+      :halign "center"
+
+      (label
+        :class "clock-time"
+        :text time)
+
+      (label
+        :class "clock-date"
+        :text date_full))
+
+    ;; ================= TOP ROW =================
+
+    (box
+      :class "row"
+      :spacing 14
+      :halign "center"
+
+      ;; SYSTEM
+
+      (eventbox
+        :class "card-hover"
+
+        (box
+          :class "card"
+          :orientation "vertical"
+
+          (label
+            :class "card-title"
+            :text "󰔛 SYSTEM")
+
+          (label
+            :class "card-line"
+            :text cpu)
+
+          (label
+            :class "card-line"
+            :text ram)
+
+          (label
+            :class "card-line"
+            :text uptime)))
+
+      ;; MUSIC
+
+      (eventbox
+        :class "card-hover"
+
+        (box
+          :class "card"
+          :orientation "vertical"
+
+          (label
+            :class "card-title"
+            :text "󰎆 MUSIC")
+
+          (label
+            :class "music-line"
+            :wrap true
+            :text music)
+
+          (box
+            :class "music-controls"
+            :spacing 8
+            :halign "center"
+
+            (button
+              :class "music-btn"
+              :onclick "playerctl previous"
+              "󰒮")
+
+            (button
+              :class "music-btn"
+              :onclick "playerctl play-pause"
+              "󰐎")
+
+            (button
+              :class "music-btn"
+              :onclick "playerctl next"
+              "󰒭")))))
+
+    ;; ================= BOTTOM ROW =================
+
+    (box
+      :class "row"
+      :spacing 14
+      :halign "center"
+
+      ;; NETWORK
+
+      (eventbox
+        :class "card-hover"
+
+        (box
+          :class "card"
+          :orientation "vertical"
+
+          (label
+            :class "card-title"
+            :text "󰖩 NETWORK")
+
+          (label
+            :class "card-line"
+            :text net)
+
+          (label
+            :class "card-line"
+            :text ip)
+
+          (label
+            :class "card-line"
+            :text torstatus)
+
+          (label
+            :class "card-line"
+            :text tor_ip)))
+
+      ;; WEATHER
+
+      (eventbox
+        :class "card-hover"
+
+        (box
+          :class "card"
+          :orientation "vertical"
+
+          (label
+            :class "card-title"
+            :text "󰖙 WEATHER")
+
+          (label
+            :class "card-line"
+            :text weather))))))

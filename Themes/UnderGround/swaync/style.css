@@ -1,0 +1,243 @@
+/* =========================================================
+   SWAYNC — UNDERGROUND CYBERPUNK
+   ========================================================= */
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+}
+
+/* =========================================================
+   CONTROL CENTER
+   ========================================================= */
+
+.control-center {
+  background: rgba(8, 8, 8, 0.92);
+
+  border-radius: 26px;
+
+  border: 1px solid rgba(157, 78, 221, 0.25);
+
+  padding: 14px;
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,0.8),
+    0 0 60px rgba(157,78,221,0.08);
+}
+
+/* =========================================================
+   NOTIFICATION PANEL
+   ========================================================= */
+
+.notification-row {
+  outline: none;
+}
+
+.notification {
+  background: rgba(20,20,20,0.92);
+
+  border-radius: 18px;
+
+  margin: 10px 6px;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255,255,255,0.04);
+
+  transition:
+    background 180ms,
+    border 180ms,
+    box-shadow 180ms;
+}
+
+.notification:hover {
+
+  background: rgba(28,28,28,0.98);
+
+  border: 1px solid rgba(199,125,255,0.30);
+
+  box-shadow:
+    0 0 16px rgba(157,78,221,0.14);
+}
+
+/* =========================================================
+   APP NAME
+   ========================================================= */
+
+.summary {
+  color: #d7a6ff;
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.body {
+  color: rgba(255,255,255,0.78);
+
+  margin-top: 6px;
+}
+
+/* =========================================================
+   TIME
+   ========================================================= */
+
+.time {
+  color: rgba(255,255,255,0.35);
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.close-button {
+
+  background: rgba(35,35,35,0.95);
+
+  color: #d7a6ff;
+
+  border-radius: 12px;
+
+  margin: 6px;
+
+  transition:
+    background 180ms,
+    color 180ms;
+}
+
+.close-button:hover {
+
+  background: rgba(157,78,221,0.28);
+
+  color: white;
+}
+
+/* =========================================================
+   CONTROL CENTER HEADER
+   ========================================================= */
+
+.control-center-title {
+
+  color: #d7a6ff;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   WIDGETS
+   ========================================================= */
+
+.widget-title {
+
+  color: #d7a6ff;
+
+  font-weight: bold;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.widget-buttons-grid button,
+.widget-menubar > box > button,
+.widget-volume button,
+.widget-backlight button {
+
+  background: rgba(25,25,25,0.95);
+
+  border-radius: 16px;
+
+  color: #d7a6ff;
+
+  margin: 6px;
+
+  transition:
+    background 180ms,
+    color 180ms,
+    box-shadow 180ms;
+}
+
+.widget-buttons-grid button:hover,
+.widget-menubar > box > button:hover,
+.widget-volume button:hover,
+.widget-backlight button:hover {
+
+  background: rgba(157,78,221,0.25);
+
+  color: white;
+
+  box-shadow:
+    0 0 12px rgba(199,125,255,0.16);
+}
+
+/* =========================================================
+   SLIDERS
+   ========================================================= */
+
+scale trough {
+
+  background: rgba(35,35,35,0.95);
+
+  border-radius: 20px;
+
+  min-height: 8px;
+}
+
+scale highlight {
+
+  background: #c77dff;
+
+  border-radius: 20px;
+}
+
+/* =========================================================
+   DND BUTTON
+   ========================================================= */
+
+.widget-dnd {
+
+  background: rgba(20,20,20,0.95);
+
+  border-radius: 18px;
+
+  padding: 10px;
+
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   MPRIS / MUSIC
+   ========================================================= */
+
+.widget-mpris {
+
+  background: rgba(18,18,18,0.92);
+
+  border-radius: 20px;
+
+  padding: 14px;
+
+  margin-top: 12px;
+
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.widget-mpris-title {
+
+  color: #d7a6ff;
+
+  font-weight: bold;
+}
+
+.widget-mpris-subtitle {
+
+  color: rgba(255,255,255,0.72);
+}

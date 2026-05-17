@@ -1,0 +1,11 @@
+[general]
+bars = 50
+
+[input]
+method = pulse
+
+[output]
+method = raw
+raw_target = /dev/stdout
+data_format = ascii
+ascii_max_range = 7

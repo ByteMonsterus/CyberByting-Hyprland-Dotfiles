@@ -1,0 +1,69 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+}
+
+/* ventana principal */
+window {
+    background-color: rgba(5, 5, 5, 0.92);
+    border: 2px solid #9d4edd;
+    border-radius: 18px;
+}
+
+/* caja interna */
+#outer-box {
+    margin: 18px;
+}
+
+/* barra de búsqueda */
+#input {
+    background-color: rgba(15,15,15,0.95);
+    color: #d6d6d6;
+
+    border: 1px solid #9d4edd;
+    border-radius: 12px;
+
+    padding: 12px;
+    margin-bottom: 18px;
+}
+
+/* apps */
+#entry {
+    padding: 12px;
+    margin: 4px;
+
+    border-radius: 12px;
+
+    color: #d6d6d6;
+    background: transparent;
+}
+
+/* app seleccionada */
+#entry:selected {
+    background: rgba(157, 78, 221, 0.25);
+
+    border-left: 3px solid #c77dff;
+
+    color: #ffffff;
+}
+
+/* iconos */
+#img {
+    margin-right: 12px;
+}
+
+/* texto */
+#text {
+    margin: 2px;
+}
+
+/* scroll */
+scrollbar {
+    background: transparent;
+}
+
+scrollbar slider {
+    background: #9d4edd;
+    border-radius: 10px;
+    min-width: 6px;
+}

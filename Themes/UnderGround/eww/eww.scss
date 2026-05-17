@@ -1,0 +1,144 @@
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard {
+
+  background-color: rgba(10,10,10,0.0);
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(180,120,255,0.0);
+
+  padding: 26px;
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,0.75),
+    0 0 60px rgba(120,0,255,0.08);
+}
+
+/* ================= CLOCK ================= */
+
+.clock-section {
+
+  margin-bottom: 20px;
+}
+
+.clock-time {
+
+  font-size: 72px;
+  font-weight: bold;
+
+  color: #d7a6ff;
+
+  text-shadow:
+    0 0 14px rgba(199,125,255,0.22);
+}
+
+.clock-date {
+
+  font-size: 16px;
+
+  color: rgba(255,255,255,0.72);
+
+  margin-top: 6px;
+}
+
+/* ================= ROWS ================= */
+
+.row {
+
+  margin-top: 14px;
+}
+
+/* ================= EVENTBOX ================= */
+
+.card-hover {
+  border-radius: 22px;
+  transition:
+    background-color 180ms,
+    box-shadow 180ms;
+}
+
+/* REAL HOVER */
+
+.card-hover:hover {
+  background: rgba(157,78,221,0.10);
+  box-shadow:
+    0 0 18px rgba(157,78,221,0.20);
+}
+
+/* ================= CARDS ================= */
+
+.card {
+
+  background-color: rgba(20,20,20,0.88);
+
+  border-radius: 22px;
+
+  min-width: 230px;
+  min-height: 130px;
+
+  padding: 20px;
+
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ================= TITLES ================= */
+
+.card-title {
+
+  color: #d7a6ff;
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* ================= TEXT ================= */
+
+.card-line {
+
+  color: rgba(255,255,255,0.82);
+
+  font-size: 13px;
+}
+
+.music-line {
+
+  color: white;
+
+  font-size: 13px;
+
+  margin-bottom: 16px;
+}
+
+/* ================= MUSIC BUTTONS ================= */
+
+.music-btn {
+
+  background-color: rgba(35,35,35,0.95);
+
+  border-radius: 16px;
+
+  padding: 8px 12px;
+
+  font-size: 20px;
+
+  color: #d7a6ff;
+
+  transition:
+    background-color 180ms,
+    color 180ms;
+}
+
+/* BUTTON HOVER */
+
+.music-btn:hover {
+
+  background-color: rgba(157,78,221,0.28);
+
+  color: white;
+}
