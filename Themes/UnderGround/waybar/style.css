@@ -3,6 +3,8 @@
     font-size: 13px;
     min-height: 0;
     border: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 #custom-cava {
@@ -11,18 +13,21 @@
   color: #a855f7;
 }
 
-window#waybar.top {
+window#waybar.left {
     background: rgba(5, 5, 5, 0.75);
-    border-bottom: 1px solid #9d4edd;
 }
 
 #workspaces {
-    margin: 4px 0 4px 8px;
+    margin: 4px 0 4px 4px;   
+    padding: 0;
 }
 
 #workspaces button {
     color: #888;
-    margin: 4px;
+    margin: 1px;            
+    padding: 2px 6px;       
+    min-width: 0;           
+    border-radius: 6px;
 }
 
 #workspaces button:hover {
@@ -45,7 +50,9 @@ window#waybar.top {
 #custom-notifications,
 #custom-tor {
     color: #d6d6d6;
-    padding: 0 12px;
+    margin: 5px;
+    padding: 0px 12px;
+    border-radius: 10px;
 }
 
 #custom-notifications:hover{
@@ -147,25 +154,6 @@ window#waybar.top {
 
 window#waybar.bottom {
     background: rgba(5,5,5,0.75);
-    border-top: 1px solid #9d4edd;
-}
-
-/* workspaces dock */
-
-window#waybar.bottom #workspaces button {
-    background: rgba(20,20,20,0.7);
-    border-radius: 14px;
-    color: #d6d6d6;
-    transition: all 1s ease;
-}
-
-window#waybar.bottom #workspaces button.active {
-    background: #9d4edd;
-    color: black;
-}
-
-window#waybar.bottom #workspaces button:hover {
-    background: rgba(157,78,221,0.4);
 }
 
 /* iconos dock */
@@ -176,7 +164,7 @@ window#waybar.bottom #workspaces button:hover {
 #custom-discord,
 #custom-wireshark {
 
-    font-size: 14px;
+    font-size: 16px;
 
     background: rgba(20,20,20,0.7);
 

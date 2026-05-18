@@ -1,13 +1,14 @@
 [
   {
   "layer": "top",
-  "position": "top",
-  "height": 40,
-  "spacing": 6,
+  "position": "left",
+  "height": "auto",
+  "width": 10,
+  "spacing": 0,
 
   "modules-left": ["custom/arch"],
-  "modules-center": ["custom/cava"],
-  "modules-right": ["tray", "network", "bluetooth", "pulseaudio"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [],
 
 "custom/cava": {
         "format": "{}",
@@ -20,12 +21,75 @@
     "on-click" : "wofi -S drun"
   },
 
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "sort-by-number": true,
+    "all-outputs": false,
+    "format-icons": {
+        "active": "󰮯",
+        "default": "󰊠",
+        "empty": "◉"
+    },
+    "persistent-workspaces": {
+        "*": 9
+    },
+    "on-click": "activate"
+  },
+
+
   "clock": {
     "format": "  {:%H:%M} ",
     "tooltip-format": "{:%A, %d %B %Y\n%H:%M}"
   },
+  },
+  {
+    "layer": "top",
+    "position": "bottom",
+    "height": 20,
 
-  "network": {
+    "modules-center": [
+        "custom/terminal",
+        "custom/firefox",
+        "custom/sublime",
+        "custom/discord",
+        "custom/wireshark"
+    ],
+
+    "custom/terminal": {
+        "format": "",
+        "on-click": "kitty"
+    },
+
+    "custom/firefox": {
+        "format": "",
+        "on-click": "firefox"
+    },
+
+    "custom/sublime": {
+        "format": "",
+        "on-click": "subl"
+    },
+
+    "custom/discord": {
+        "format": "",
+        "on-click": "discord"
+    },
+
+    "custom/wireshark": {
+        "format": "󱙳",
+        "on-click": "wireshark"
+    },
+
+    "modules-right": [
+      "tray", 
+      "network", 
+      "bluetooth", 
+      "pulseaudio",
+      "custom/notifications",
+      "battery"
+    ],
+
+      "network": {
     "format-wifi": " ",
     "format-ethernet": "󰈀  Ethernet",
     "format-linked": "󰈀  {ifname}",
@@ -65,67 +129,6 @@
     "return-type": "plain",
     "tooltip": true,
     "on-click": "kitty -e sh -c 'systemctl status tor || systemctl status tor.service; read' &"
-    }
-  },
-  {
-    "layer": "top",
-    "position": "bottom",
-    "height": 20,
-
-    "modules-left": [
-        "custom/terminal",
-        "custom/firefox",
-        "custom/sublime",
-        "custom/discord",
-        "custom/wireshark"
-    ],
-
-    "custom/terminal": {
-        "format": " Kitty",
-        "on-click": "kitty"
-    },
-
-    "custom/firefox": {
-        "format": " Firefox",
-        "on-click": "firefox"
-    },
-
-    "custom/sublime": {
-        "format": " Sublime",
-        "on-click": "wireshark"
-    },
-
-    "custom/discord": {
-        "format": " Discord",
-        "on-click": "discord"
-    },
-
-    "custom/wireshark": {
-        "format": "󱙳 Wireshark",
-        "on-click": "wireshark"
-    },
-
-    "modules-center": [
-        "hyprland/workspaces"
-    ],
-    "modules-right": [
-      "custom/notifications",
-      "battery"
-    ],
-
-    "hyprland/workspaces": {
-    "format": "{icon}",
-    "sort-by-number": true,
-    "all-outputs": false,
-    "format-icons": {
-        "active": "󰮯",
-        "default": "󰊠",
-        "empty": "◉"
-    },
-    "persistent-workspaces": {
-        "*": 9
-    },
-    "on-click": "activate"
   },
 
   "custom/notifications": {
