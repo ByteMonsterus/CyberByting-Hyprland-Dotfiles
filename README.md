@@ -24,10 +24,12 @@
   <li>WayBar</li>
   <li>Wofi</li>
   <li>Clickhist</li>
+  <li>Cava</li>
   <li>Kitty</li>
   <li>HyprIdle</li>
   <li>HyprLock</li>
   <li>HyprPaper</li>
+  <li>Hyprshade</li>
   <li>HyprShot</li>
   <li>Clickhist</li>
   <li>Kitty</li>
