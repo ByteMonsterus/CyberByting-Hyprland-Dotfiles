@@ -1,61 +1,83 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+}
+
+/* ventana principal */
 window {
-  margin: 0px;
-  border: 2px solid #9d4edd;
-  border-radius: 14px;
-  background-color: rgba(18, 18, 28, 0.94);
-  font-family: "Hack";
-  font-size: 16px;
-  box-shadow: 0px 0px 25px rgba(157, 78, 221, 0.55);
-}
+    background-color: rgba(10, 10, 15, 0.78);
 
+    border: 2px solid rgba(157, 78, 221, 0.7);
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.35);
+}
+/* caja interna */
 #outer-box {
-  margin: 0px;
-  padding: 12px;
-  border: none;
-  border-radius: 14px;
-  background-color: transparent;
+    margin: 18px;
 }
 
+/* barra de búsqueda */
 #input {
-  margin: 10px;
-  padding: 12px;
-  border: 1px solid #c77dff;
-  border-radius: 30px;
-  background-color: rgba(30, 20, 40, 0.95);
-  color: #f5eaff;
-  box-shadow: 0px 0px 12px rgba(199, 125, 255, 0.35);
+    background-color: rgba(20,20,28,0.95);
+
+    color: #ffffff;
+
+    border: 1px solid rgba(199,125,255,0.6);
+    border-radius: 14px;
+
+    padding: 14px;
+
+    margin-bottom: 18px;
+
+    box-shadow: inset 0 0 8px rgba(157,78,221,0.25);
 }
 
-#inner-box {
-  margin: 8px;
-  border: none;
-  border-radius: 14px;
-  background-color: transparent;
-}
-
-#scroll {
-  margin: 4px;
-  border: none;
-}
-
+/* apps */
 #entry {
-  padding: 12px;
-  margin: 4px;
-  border-radius: 12px;
-  background-color: transparent;
-  color: #e9d8fd;
+    padding: 14px;
+    margin: 6px;
+
+    border-radius: 12px;
+
+    color: #d6d6d6;
+    background: transparent;
 }
 
+/* app seleccionada */
 #entry:selected {
-  background-color: rgba(157, 78, 221, 0.28);
-  color: white;
-  box-shadow: 0px 0px 10px rgba(157, 78, 221, 0.45);
+    background: linear-gradient(
+        90deg,
+        rgba(157,78,221,0.30),
+        rgba(80,40,120,0.20)
+    );
+
+    border-left: 3px solid #c77dff;
+
+    color: white;
+
+    box-shadow: 0 0 12px rgba(157,78,221,0.25);
 }
 
-#text:selected {
-  color: white;
-}
-
+/* iconos */
 #img {
-  margin-right: 10px;
+    margin-right: 14px;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+/* texto */
+#text {
+    margin: 2px;
+}
+
+/* scroll */
+scrollbar {
+    background: transparent;
+}
+
+scrollbar slider {
+    background: #9d4edd;
+    border-radius: 10px;
+    min-width: 6px;
 }

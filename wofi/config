@@ -1,8 +1,9 @@
-width=700
-height=400
+width=850
+height=500
 location=center
-prompt=Sistema...
+prompt=  Launch...
 allow_images=true
 term=kitty
 hide_scroll=true
 no_actions=true
+gtk_dark=true
